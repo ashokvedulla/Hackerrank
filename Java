@@ -1,0 +1,377 @@
+1)https://www.hackerrank.com/challenges/welcome-to-java/problem?isFullScreen=true
+------
+public class Solution {
+
+    public static void main(String[] args) {
+        System.out.println("Hello, World.");
+        System.out.println("Hello, Java.");
+    }
+}
+
+
+2)https://www.hackerrank.com/challenges/java-if-else/problem?isFullScreen=true
+-----
+  import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        if (n % 2 != 0) {
+            System.out.println("Weird");
+        } else if (n >= 2 && n <= 5) {
+            System.out.println("Not Weird");
+        } else if (n >= 6 && n <= 20) {
+            System.out.println("Weird");
+        } else {
+            System.out.println("Not Weird");
+        }
+
+        sc.close();
+    }
+}
+
+3)https://www.hackerrank.com/challenges/java-stdin-stdout/problem?isFullScreen=true
+------
+  import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read integer
+        int i = scanner.nextInt();
+
+        // Read double
+        double d = scanner.nextDouble();
+
+        // Consume the leftover newline
+        scanner.nextLine();
+
+        // Read String
+        String s = scanner.nextLine();
+
+        // Print in required format
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
+
+        scanner.close();
+    }
+}
+
+4)https://www.hackerrank.com/challenges/java-output-formatting/problem?isFullScreen=true
+------
+  import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("================================");
+
+        for (int i = 0; i < 3; i++) {
+            String s = scanner.next();
+            int x = scanner.nextInt();
+
+            // %-15s : left-justify string in 15 characters
+            // %03d   : print integer with at least 3 digits, padded with zeros
+            System.out.printf("%-15s%03d%n", s, x);
+        }
+
+        System.out.println("================================");
+
+        scanner.close();
+    }
+}
+
+
+5)https://www.hackerrank.com/challenges/java-loops-i/problem?isFullScreen=true
+-----
+  import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        scanner.close();
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(N + " x " + i + " = " + (N * i));
+        }
+    }
+}
+
+6)https://www.hackerrank.com/challenges/java-loops/problem?isFullScreen=true
+-----
+  import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int q = scanner.nextInt(); // number of queries
+
+        for (int i = 0; i < q; i++) {
+            int a = scanner.nextInt();
+            int b = scanner.nextInt();
+            int n = scanner.nextInt();
+
+            int sum = a;
+            for (int j = 0; j < n; j++) {
+                sum += (int)(Math.pow(2, j) * b);
+                System.out.print(sum + " ");
+            }
+            System.out.println();
+        }
+        scanner.close();
+    }
+}
+
+7)https://www.hackerrank.com/challenges/java-datatypes/problem?isFullScreen=true
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while (t-- > 0) {
+            String n = sc.next();
+
+            try {
+                long value = Long.parseLong(n);
+                System.out.println(n + " can be fitted in:");
+
+                if (value >= Byte.MIN_VALUE && value <= Byte.MAX_VALUE) {
+                    System.out.println("* byte");
+                }
+                if (value >= Short.MIN_VALUE && value <= Short.MAX_VALUE) {
+                    System.out.println("* short");
+                }
+                if (value >= Integer.MIN_VALUE && value <= Integer.MAX_VALUE) {
+                    System.out.println("* int");
+                }
+                if (value >= Long.MIN_VALUE && value <= Long.MAX_VALUE) {
+                    System.out.println("* long");
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.println(n + " can't be fitted anywhere.");
+            }
+        }
+
+        sc.close();
+    }
+}
+
+8)https://www.hackerrank.com/challenges/java-end-of-file/problem?isFullScreen=true
+------
+  import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int lineNumber = 1;
+
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine();
+            System.out.println(lineNumber + " " + line);
+            lineNumber++;
+        }
+
+        sc.close();
+    }
+}
+
+9)https://www.hackerrank.com/challenges/java-strings-introduction/problem?isFullScreen=true
+------
+  import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String A = sc.next();
+        String B = sc.next();
+
+        // 1. Sum of lengths
+        System.out.println(A.length() + B.length());
+
+        // 2. Lexicographical comparison
+        if (A.compareTo(B) > 0) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+
+        // 3. Capitalize first letter of both strings
+        String capA = A.substring(0, 1).toUpperCase() + A.substring(1);
+        String capB = B.substring(0, 1).toUpperCase() + B.substring(1);
+
+        System.out.println(capA + " " + capB);
+
+        sc.close();
+    }
+}
+
+10)https://www.hackerrank.com/challenges/java-string-reverse/problem?isFullScreen=true
+------
+  import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+        String reversed = "";
+
+        // Reverse the string
+        for (int i = s.length() - 1; i >= 0; i--) {
+            reversed += s.charAt(i);
+        }
+
+        // Check palindrome
+        if (s.equals(reversed)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+
+        sc.close();
+    }
+}
+
+11)https://www.hackerrank.com/challenges/java-string-tokens/problem?isFullScreen=true
+------
+  import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine().trim();
+
+        // Handle empty or whitespace-only input
+        if (s.isEmpty()) {
+            System.out.println(0);
+            return;
+        }
+
+        // Split by one or more non-alphabetic characters
+        String[] tokens = s.split("[^A-Za-z]+");
+
+        System.out.println(tokens.length);
+        for (String token : tokens) {
+            System.out.println(token);
+        }
+
+        sc.close();
+    }
+}
+
+12)https://www.hackerrank.com/challenges/pattern-syntax-checker/problem?isFullScreen=true
+------
+  import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int t = Integer.parseInt(sc.nextLine());  // number of test cases
+
+        while (t-- > 0) {
+            String pattern = sc.nextLine();
+
+            try {
+                Pattern.compile(pattern);   // try compiling regex
+                System.out.println("Valid");
+            } catch (PatternSyntaxException e) {
+                System.out.println("Invalid");
+            }
+        }
+
+        sc.close();
+    }
+}
+
+13)https://www.hackerrank.com/challenges/java-primality-test/problem?isFullScreen=true
+------
+  import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        BigInteger n = sc.nextBigInteger();
+
+        // Check if prime
+        if (n.isProbablePrime(10)) {
+            System.out.println("prime");
+        } else {
+            System.out.println("not prime");
+        }
+
+        sc.close();
+    }
+}
+
+14)https://www.hackerrank.com/challenges/java-biginteger/problem?isFullScreen=true
+-----
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        BigInteger a = sc.nextBigInteger();
+        BigInteger b = sc.nextBigInteger();
+
+        // Addition
+        System.out.println(a.add(b));
+
+        // Multiplication
+        System.out.println(a.multiply(b));
+
+        sc.close();
+    }
+}
+
+15)https://www.hackerrank.com/challenges/java-negative-subarray/problem?isFullScreen=true
+------
+  import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int count = 0;
+
+        // Generate all subarrays
+        for (int i = 0; i < n; i++) {
+            int sum = 0;
+            for (int j = i; j < n; j++) {
+                sum += arr[j];
+                if (sum < 0) {
+                    count++;
+                }
+            }
+        }
+
+        System.out.println(count);
+        sc.close();
+    }
+}
+
+
